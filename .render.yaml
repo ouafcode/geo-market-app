@@ -6,4 +6,4 @@ services:
     startCommand: "gunicorn main:app"
     envVars:
       - key: DB_CREDENTIALS
-        value: host='localhost' dbname='burundi' port='5432' user='postgres' password='GIS@2594'
+        value:host=your-db-host dbname=your-db user=your-user password=your-password
