@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: geo-market-app
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn main:app"
+    envVars:
+      - key: DB_CREDENTIALS
+        value: host='localhost' dbname='burundi' port='5432' user='postgres' password='GIS@2594'
