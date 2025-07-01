@@ -5,12 +5,15 @@ import os
 
 search_bp = Blueprint("search", __name__) #Define a blueprint
 
-#Load DB credentials
-file_path = "C:\wamp64\www\market_analytics\webMapping-Application\services\db.credentials"
+#mode production
+conn_str = os.environ.get("DB_CREDENTIALS")
 
-# file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".\db_credentials")
-with open(file_path) as f:
-    conn_str = f.readline().strip()
+
+#Load DB credentials
+if not conn_str:
+    file_path = "C:\wamp64\www\market_analytics\webMapping-Application\services\db.credentials"
+    with open(file_path) as f:
+        conn_str = f.readline().strip()
  
 @search_bp.route('/search_markets', methods=['GET', 'POST'])
 def search_markets():

@@ -5,12 +5,15 @@ import os
 
 service_bp = Blueprint("service", __name__) #Define a blueprint
 
-#Load DB credentials
-file_path = "C:\wamp64\www\market_analytics\webMapping-Application\services\db.credentials"
+#mode production
+conn_str = os.environ.get("DB_CREDENTIALS")
 
-# file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".\db_credentials")
-with open(file_path) as f:
-    conn_str = f.readline().strip()
+
+#Load DB credentials
+if not conn_str:
+    file_path = "C:\wamp64\www\market_analytics\webMapping-Application\services\db.credentials"
+    with open(file_path) as f:
+        conn_str = f.readline().strip()
  
 @service_bp.route('/get_area', methods=['GET', 'POST'])
 def get_area():
