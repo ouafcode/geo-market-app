@@ -2,6 +2,10 @@
 
 An interactive web-based GIS platform for exploring and analyzing market data across Burundi. The application includes spatial tools for visualizing market access, calculating routes, and identifying nearby markets to support logistics and decision-making.
 
+👉 **Live Demo**: [https://ouafcode.github.io/geo-market-frontend/](https://ouafcode.github.io/geo-market-frontend/)  
+👉 **Backend API**: [https://geo-market-app.onrender.com](https://geo-market-app.onrender.com)
+
+
 ## 🚀 Features
 
 - **Base Map Selector**: Switch between various base maps (satellite, terrain, streets).
